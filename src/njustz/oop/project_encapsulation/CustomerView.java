@@ -1,5 +1,7 @@
 package njustz.oop.project_encapsulation;
 
+import javax.sound.midi.SoundbankResource;
+
 /**
  * @author njustz
  * @date 2020/3/1
@@ -45,8 +47,6 @@ public class CustomerView {
                     }
 
             }
-
-
         }
 
 
@@ -79,7 +79,15 @@ public class CustomerView {
     }
 
     private void deleteCustomer(){
-        System.out.println("删除客户");
+        System.out.println("---------------删除客户---------------");
+        listAllCustomer();
+        System.out.println("请选择删除用户编号：");
+        int index = CMUtility.readInt();
+        boolean deleteCustomer = customerList.deleteCustomer((index -1));
+        if (!deleteCustomer){
+            System.out.println("---------------删除客户失败---------------");
+        }else
+            System.out.println("---------------删除客户完成---------------");
     }
 
     private void listAllCustomer(){
@@ -102,7 +110,6 @@ public class CustomerView {
 
     public static void main(String[] args) {
         CustomerView customerView = new CustomerView();
-
         customerView.enterMainMenu();
     }
 
