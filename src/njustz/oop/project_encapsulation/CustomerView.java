@@ -10,6 +10,9 @@ public class CustomerView {
 
     public void enterMainMenu(){
 
+       /* Customer customer = new Customer("hhh", '男', 26, "12567896789", "hhh@lll.com");
+        customerList.addCustomer(customer);*/
+
         boolean isFlag = true;
         while (isFlag){
             System.out.println("\n---------------客户信息软件---------------");
@@ -50,7 +53,24 @@ public class CustomerView {
     }
 
     private void addNewCustomer(){
-        System.out.println("添加客户");
+        System.out.println("---------------添加客户---------------");
+        System.out.println("姓名: ");
+        String name = CMUtility.readString(10);
+        System.out.println("性别: ");
+        char gender = CMUtility.readChar();
+        System.out.println("年龄: ");
+        int age = CMUtility.readInt();
+        System.out.println("电话: ");
+        String phone = CMUtility.readString(13);
+        System.out.println("邮箱: ");
+        String email = CMUtility.readString(20);
+        Customer customer = new Customer(name, gender, age, phone, email);
+        boolean addCustomer = customerList.addCustomer(customer);
+        if (!addCustomer){
+            System.out.println("---------------添加客户失败---------------");
+        }else
+            System.out.println("---------------添加客户完成---------------");
+
     }
 
     private void modifyCustomer(){
@@ -63,12 +83,26 @@ public class CustomerView {
     }
 
     private void listAllCustomer(){
-        System.out.println("客户列表");
+        System.out.println("---------------客户列表---------------");
+        int total = customerList.getTotal();
+        if(total == 0){
+            System.out.println("没有客户信息");
+        }else {
+            System.out.println("编号\t姓名\t性别\t年龄\t电话\t\t邮箱");
+            Customer[] allCustomers = customerList.getAllCustomers();
+            for(Customer customer : allCustomers){
+                int i = 1;
+                System.out.println(i + "\t\t" + customer.getName() + "\t\t" + customer.getGender() + "\t\t" + customer.getAge() + "\t\t" + customer.getPhone() + "\t" + customer.getEmail());
+                i++;
+            }
+        }
 
+        System.out.println("---------------客户列表完成---------------");
     }
 
     public static void main(String[] args) {
         CustomerView customerView = new CustomerView();
+
         customerView.enterMainMenu();
     }
 
