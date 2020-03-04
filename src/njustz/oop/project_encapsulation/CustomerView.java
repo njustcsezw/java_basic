@@ -10,8 +10,8 @@ public class CustomerView {
 
     public void enterMainMenu(){
 
-       /* Customer customer = new Customer("hhh", '男', 26, "12567896789", "hhh@lll.com");
-        customerList.addCustomer(customer);*/
+        Customer customer = new Customer("hhh", '男', 26, "12567896789", "hhh@lll.com");
+        customerList.addCustomer(customer);
 
         boolean isFlag = true;
         while (isFlag){
@@ -72,15 +72,65 @@ public class CustomerView {
     }
 
     private void modifyCustomer(){
-        System.out.println("修改客户");
+        System.out.println("---------------修改客户---------------");
+        listAllCustomer();
+        int index;
+        Customer customer;
+        for(; ;){
+            System.out.println("请选择修改用户编号(-1退出)：");
+            index = CMUtility.readInt();
+            if(index == -1){
+                return;
+            }
+            customer = customerList.getCustomer((index -1 ));
+            if(customer == null){
+                System.out.println("找不到该用户");
+            }else {
+                break;
+            }
+        }
+
+        System.out.println("姓名(" + customer.getName() + "): ");
+        String name = CMUtility.readString(10, customer.getName());
+        System.out.println("性别(" + customer.getGender() + "): ");
+        char gender = CMUtility.readChar(customer.getGender());
+        System.out.println("年龄(" + customer.getAge() + "): ");
+        int age = CMUtility.readInt(customer.getAge());
+        System.out.println("电话(" + customer.getPhone() + "): ");
+        String phone = CMUtility.readString(13, customer.getPhone());
+        System.out.println("邮箱(" + customer.getEmail() + "): ");
+        String email = CMUtility.readString(30, customer.getEmail());
+
+        Customer customer1 = new Customer(name, gender, age, phone, email);
+        boolean replaceCustomer = customerList.replaceCustomer((index - 1), customer1);
+        if (!replaceCustomer){
+            System.out.println("---------------修改客户失败---------------");
+        }else
+            System.out.println("---------------修改客户完成---------------");
+
 
     }
 
     private void deleteCustomer(){
         System.out.println("---------------删除客户---------------");
         listAllCustomer();
-        System.out.println("请选择删除用户编号：");
-        int index = CMUtility.readInt();
+        int index;
+        for(; ;){
+            System.out.println("请选择删除用户编号(-1退出)：");
+            index = CMUtility.readInt();
+            if(index == -1){
+                return;
+            }
+
+            Customer customer = customerList.getCustomer((index-1));
+            if(customer == null){
+                System.out.println("找不到该用户");
+            }else {
+                break;
+            }
+
+
+        }
         boolean deleteCustomer = customerList.deleteCustomer((index -1));
         if (!deleteCustomer){
             System.out.println("---------------删除客户失败---------------");
