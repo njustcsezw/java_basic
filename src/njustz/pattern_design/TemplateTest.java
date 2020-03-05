@@ -1,7 +1,5 @@
 package njustz.pattern_design;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
 /**
  * @author njustz
  * @date 2020/3/5
