@@ -6,7 +6,7 @@ package njustz.basiclib.process;
  * @date 2020/3/6
  */
 
-public class ThreadTest extends Thread{
+class MyThread extends Thread{
 
     @Override
     public void run() {
@@ -19,9 +19,14 @@ public class ThreadTest extends Thread{
 
     }
 
-    public static void main(String[] args) {
-        ThreadTest threadTest = new ThreadTest();
-        threadTest.start();
-    }
+}
 
+public class ThreadTest{
+    public static void main(String[] args) {
+        MyThread threadTest = new MyThread();
+        threadTest.start();
+        for (int i = 0; i < 50; i++) {
+            System.out.print("hello~ ");
+        }
+    }
 }
