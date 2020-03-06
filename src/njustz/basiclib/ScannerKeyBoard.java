@@ -11,5 +11,6 @@ public class ScannerKeyBoard {
         while (sc.hasNext()){
             System.out.println("input :" + sc.next());
         }
+
     }
 }
