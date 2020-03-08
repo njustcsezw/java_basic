@@ -43,7 +43,8 @@ class Black{
     }
 
     //3.初始化对象
-    public static Black getInstance(){
+    //加入synchronized让线程安全
+    public synchronized static Black getInstance(){
         if(black == null){
             black = new Black();
         }
