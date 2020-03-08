@@ -1,4 +1,4 @@
-package njustz.basiclib;
+package njustz.basiclib.IO;
 
 import java.util.Scanner;
 
