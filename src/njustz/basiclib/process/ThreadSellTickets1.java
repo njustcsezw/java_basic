@@ -39,7 +39,7 @@ class MyThread3 implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println(Thread.currentThread().getName() + ":买票，票号为： " + ticket);
+            System.out.println(Thread.currentThread().getName() + ":卖票，票号为： " + ticket);
             ticket--;
         }
     }

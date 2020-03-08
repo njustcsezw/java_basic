@@ -1,6 +1,7 @@
 package njustz.basiclib.process;
 
 /**
+ * 使用synchronized方式解决线程安全问题
  * @author njustz
  * @date 2020/3/7
  */
@@ -36,7 +37,7 @@ class MyThread2 implements Runnable{
                         } catch (InterruptedException e) {
                             e.printStackTrace();
                         }
-                        System.out.println(Thread.currentThread().getName() + ":买票，票号为： " + ticket);
+                        System.out.println(Thread.currentThread().getName() + ":卖票，票号为： " + ticket);
                         ticket--;
                     } else {
                         break;
