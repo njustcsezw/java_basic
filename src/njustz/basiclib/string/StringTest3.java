@@ -1,6 +1,5 @@
 package njustz.basiclib.string;
 
-import java.nio.Buffer;
 
 /**
  * String, StringBuffer, StringBuilder三者之间效率测试
