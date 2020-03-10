@@ -1,6 +1,7 @@
 package njustz.basiclib.string;
 
 /**
+ * String类常用的方法
  * @author njustz
  * @date 2020/3/8
  */
