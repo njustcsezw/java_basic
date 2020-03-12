@@ -1,5 +1,6 @@
 package njustz.collection;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
@@ -35,6 +36,13 @@ public class CollectionTest1 {
         coll1.add("BB");
 
         coll.retainAll(coll1);
+        System.out.println(coll);
+        System.out.println("****************");
+
+        Object[] object = coll.toArray();
+        for(Object obj:object){
+            System.out.println(obj);
+        }
         System.out.println(coll);
 
     }
