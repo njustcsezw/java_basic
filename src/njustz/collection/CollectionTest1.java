@@ -44,7 +44,6 @@ public class CollectionTest1 {
             System.out.println(obj);
         }
         System.out.println(coll);
-
     }
 
 }
