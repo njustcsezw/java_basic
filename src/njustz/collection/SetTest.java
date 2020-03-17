@@ -1,6 +1,7 @@
 package njustz.collection;
 
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -17,6 +18,11 @@ public class SetTest {
         set.add("CC");
         set.add(456);
         System.out.println(set);
+
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
 
         Set set1 = new LinkedHashSet();
         set1.add(123);
