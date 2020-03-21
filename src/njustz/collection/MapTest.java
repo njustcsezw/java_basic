@@ -1,6 +1,6 @@
 package njustz.collection;
 
-import java.util.HashMap;
+import java.util.*;
 
 /**
  * @author njustz
@@ -31,5 +31,23 @@ public class MapTest {
         System.out.println(map);
         System.out.println("**********");
 
+        Set set = map.keySet();
+        Iterator iterator = set.iterator();
+        while (iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+
+        Collection values = map.values();
+        for(Object obj:values){
+            System.out.println(obj);
+        }
+
+        Set entrySet = map.entrySet();
+        System.out.println(entrySet);
+        for (Object obj:entrySet){
+            System.out.println(obj);
+            Map.Entry entry = (Map.Entry)obj;
+            System.out.println(entry.getKey() + " " + entry.getValue());
+        }
     }
 }
