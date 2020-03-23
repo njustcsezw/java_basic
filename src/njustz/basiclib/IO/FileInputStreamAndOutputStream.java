@@ -3,6 +3,7 @@ package njustz.basiclib.IO;
 import java.io.*;
 
 /**
+ * 字节流FileInputStream与FileOutputStream
  * @author njustz
  * @date 2020/3/23
  */
