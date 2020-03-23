@@ -2,6 +2,7 @@ package njustz.basiclib.IO;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 /**
@@ -18,6 +19,7 @@ public class FileReaderAndWriter {
         if(!file1.exists()){
             file1.createNewFile();
         }
+        System.out.println(file1.length());
 
         //提供具体的流
         FileReader fileReader = new FileReader(file1);
@@ -29,8 +31,13 @@ public class FileReaderAndWriter {
             data = fileReader.read();
         }
 
-        //流的关闭
+        //流的关闭0
         fileReader.close();
+
+        //若append选择true则表示往源文件后面继续添加
+        FileWriter fileWriter = new FileWriter(file1, true);
+        fileWriter.write("\thellowordbyWriter");
+        fileWriter.close();
 
     }
 }
