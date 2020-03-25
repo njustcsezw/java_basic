@@ -18,9 +18,17 @@ public class ServerTest {
         InputStream is = null;
         ByteArrayOutputStream baos = null;
         try {
+
+            //1.创建服务器端的ServerSocket,指明自己的端口号
             ss = new ServerSocket(8899);
+
+            //2.调用accept表示接收来自于客户端的socket
             socket = ss.accept();
+
+            //3.获取输入流
             is = socket.getInputStream();
+
+            //4.读入输出流中的数据
             baos = new ByteArrayOutputStream();
             byte[] bytes = new byte[1024];
             int len;
@@ -34,6 +42,8 @@ public class ServerTest {
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
+
+            //5.关闭流
             if(baos != null){
                 try {
                     baos.close();
