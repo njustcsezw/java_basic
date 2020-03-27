@@ -11,9 +11,14 @@ import java.lang.reflect.Proxy;
  */
 public class DynamicProxyTest {
     public static void main(String[] args) {
-        Human human = (Human) ProxyFactory.getProxyInstance(new SuperMan());
-        System.out.println(human.getBelief());
-        human.eat("energy");
+        Human proxyInstance = (Human) ProxyFactory.getProxyInstance(new SuperMan());
+        System.out.println(proxyInstance.getBelief());
+        proxyInstance.eat("energy");
+
+        System.out.println("***********");
+        ClothFactory proxyInstance1 = (ClothFactory) ProxyFactory.getProxyInstance(new HhhClothFactory());
+        proxyInstance1.produceCloth();
+
     }
 }
 
