@@ -1,5 +1,7 @@
 package njustz.basiclib.Stream;
 
+import sun.print.SunMinMaxPage;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,5 +38,9 @@ public class StreamAPITest {
         //并行流
         Stream stream2 = list.parallelStream();
 
+        List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5);
+        Object reduce = list1.stream().reduce(0, (t1, t2) -> t1+t2);
+        //list1.stream().reduce(0, Integer::sum);
+        System.out.println((Integer)reduce);
     }
 }
