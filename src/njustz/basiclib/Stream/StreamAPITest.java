@@ -5,6 +5,7 @@ import sun.print.SunMinMaxPage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -38,9 +39,17 @@ public class StreamAPITest {
         //并行流
         Stream stream2 = list.parallelStream();
 
+        //归约reduce
         List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5);
         Object reduce = list1.stream().reduce(0, (t1, t2) -> t1+t2);
         //list1.stream().reduce(0, Integer::sum);
         System.out.println((Integer)reduce);
+
+        //收集collect
+        List<Integer> list2 = Arrays.asList(1, 2, 3, 6 ,5 , 4);
+        List<Integer> collect = list2.stream().sorted(Integer::compareTo).collect(Collectors.toList());
+        //list2.stream().sorted().collect(Collectors.toList());
+        System.out.println(collect);
+        System.out.println(list2);
     }
 }
