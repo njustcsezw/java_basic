@@ -1,6 +1,4 @@
-package njustz.basiclib.Stream;
-
-import sun.print.SunMinMaxPage;
+package njustz.basiclib.stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;
