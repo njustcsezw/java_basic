@@ -20,7 +20,7 @@ public class MainTransfer {
             for (int j = 2; j <str.length(); j++) {
                 exp = (int)Math.pow(16, str.length()-j-1);
                 if ('a'<=str.charAt(j)&&str.charAt(j)<='z') {
-                    Math.pow(16, j-2);
+                    //Math.pow(16, j-2);
                     num += (str.charAt(j)-87)*exp;
                 } else {
                     num += (str.charAt(j)-48)*exp;
