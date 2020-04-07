@@ -1,5 +1,7 @@
 package njustz.data_structure;
 
+import java.io.*;
+
 /**
  * 稀疏数组与二维数组之间的转换
  * @author njustz
@@ -62,5 +64,38 @@ public class SparseArray {
             System.out.println();
         }
 
+       /* try {
+            FileOutputStream fos = new FileOutputStream(new File("E:\\workCrazyJava\\src\\njustz\\data_structure\\binaryArray.txt"));
+            //char[] chars = new char[1024];
+            for (int i = 0; i < sparseArr.length; i++) {
+                for (int j = 0; j < sparseArr[i].length; j++) {
+                    fos.write(sparseArr[i][j]);
+                }
+                fos.write('\n');
+            }
+
+            if(fos!= null){
+                fos.close();
+            }
+            FileInputStream fis = new FileInputStream("E:\\workCrazyJava\\src\\njustz\\data_structure\\binaryArray.txt");
+            byte[] bytes = new byte[1024];
+            int len;
+            while ((len = fis.read(bytes))!= -1){
+                for(byte c:bytes){
+                    System.out.print(c);
+                }
+                System.out.print(" ");
+            }
+
+            if(fis != null){
+                fos.close();
+            }
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+*/
     }
 }
