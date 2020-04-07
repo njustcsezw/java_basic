@@ -15,6 +15,9 @@ public class CircleArrayQueueTest {
         circleArrayQueue.getQueue();
         circleArrayQueue.addQueue(6);
         circleArrayQueue.showQueue();
+       /* circleArrayQueue.getQueue();
+        circleArrayQueue.getQueue();
+        circleArrayQueue.getQueue();*/
 
     }
 
