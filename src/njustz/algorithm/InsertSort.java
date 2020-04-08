@@ -35,7 +35,7 @@ public class InsertSort {
         for (int i = 0; i <arr.length-1 ; i++) {
             int insertVal = arr[i+1];
             int insertIndex = i;
-            while (insertIndex>=0 && insertVal<arr[insertIndex]){
+            while (insertIndex>=0 && insertVal < arr[insertIndex]){
                 arr[insertIndex+1] = arr[insertIndex];
                 insertIndex--;
             }
