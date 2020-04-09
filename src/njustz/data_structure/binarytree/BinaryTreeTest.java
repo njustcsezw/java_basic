@@ -26,6 +26,10 @@ public class BinaryTreeTest {
         System.out.println(binaryTree.preOrderFind(5));
         System.out.println(binaryTree.infixOrderFind(5));
         System.out.println(binaryTree.postOrderFind(5));
+        System.out.println("---------------");
+        //binaryTree.delNode(5);
+        binaryTree.delNode(3);
+        binaryTree.preOrder();
     }
 }
 
@@ -170,6 +174,26 @@ class HeroNode{
         return heroNode;
     }
 
+    public void delNode(int no){
+
+
+        if(this.left != null && this.left.id == no){
+            this.left = null;
+            return;
+        }
+        if(this.right != null && this.right.id == no){
+            this.right = null;
+            return;
+        }
+        if(this.left != null){
+            this.left.delNode(no);
+        }
+        if(this.right != null){
+            this.right.delNode(no);
+        }
+
+    }
+
 }
 
 class BinaryTree{
@@ -228,5 +252,16 @@ class BinaryTree{
         }
     }
 
+    public void delNode(int no){
+        if(root!=null){
+            if(root.getId() == no){
+                root = null;
+            }else {
+                root.delNode(no);
+            }
+        }else {
+            System.out.println("the tree is null");
+        }
+    }
 
 }
