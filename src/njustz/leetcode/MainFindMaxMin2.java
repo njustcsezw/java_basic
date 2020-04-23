@@ -13,11 +13,11 @@ public class MainFindMaxMin2 {
             int m = scanner.nextInt();
             int k = scanner.nextInt();
             int[] ints = new int[m];
-            /*int sum = 0;
+            //int sum = 0;
             for (int i = 0; i < m; i++) {
                 ints[i] = scanner.nextInt();
-                sum += ints[i];
-            }*/
+                //sum += ints[i];
+            }
 
             int a = solve(k, ints);
             int count = 0;
@@ -72,7 +72,8 @@ public class MainFindMaxMin2 {
             sum += a[i];
         }
         int l = 0;
-        int r = (int)1e9;
+        //int r = (int)1e9;
+        int r = sum;
         while (l<r){
             int mid = (l+r)/2;
             if(left(mid, a) >= k){
